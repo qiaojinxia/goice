@@ -117,7 +117,7 @@ func Get(f func() Redis_Ser) (Redis_Ser,error){
 								if x1,err := AssertType(t.Field(i).Type.String(),v8);err!= nil{
 									log.Error("Handler Slice Type Error",err)
 								}else{
-									v.Field(i).Elem().Set(reflect.ValueOf(x1))
+									v.Field(i).Set(reflect.ValueOf(x1))
 								}
 							case reflect.Float32:
 								float32, _ := strconv.ParseFloat(strv, 32)
